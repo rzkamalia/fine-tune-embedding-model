@@ -2,6 +2,8 @@
 
 This repository is a small experiment for fine-tuning a text embedding model with `sentence-transformers` on the Natural Questions pair dataset.
 
+The overall fine-tuning workflow in this project was learned from: https://sbert.net/docs/sentence_transformer/training_overview.html.
+
 The current workflow:
 
 1. Download the `sentence-transformers/natural-questions` dataset.
@@ -64,6 +66,11 @@ This happens by first splitting `train` into `70/30`, then splitting the `30%` p
 - Learning rate: `1e-10`
 - Precision: `bf16=True`
 - Early stopping patience: `3`
+
+### Notes
+- Since the dataset is in the form of `(anchor, positive)` pairs, `MultipleNegativesRankingLoss` is a good fit for this training setup based on the source: https://sbert.net/docs/sentence_transformer/loss_overview.html.
+- `batch_sampler=BatchSamplers.NO_DUPLICATES` helps ensure that no duplicate entries appear in a single batch. This is important for `MultipleNegativesRankingLoss` because it uses other items in the batch as negative examples.
+- `bf16` is only supported on newer hardware, such as NVIDIA Ampere GPUs like the A100, 3090, and 4090, or on Google TPUs. If you are using an older GPU such as a T4, use `fp16` instead.
 
 ## Hardware Requirement
 
