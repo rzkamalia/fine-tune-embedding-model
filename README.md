@@ -15,13 +15,6 @@ The current workflow:
 
 ```text
 .
-├── dataset/
-│   ├── train-data/
-│   ├── eval-data/
-│   └── test-benchmark/
-├── nq-e5-large-instruct/
-│   ├── checkpoint-*/
-│   └── final/
 ├── split_data.py
 ├── training.py
 ├── pyproject.toml
