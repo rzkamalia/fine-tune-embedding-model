@@ -24,7 +24,7 @@ The current workflow:
 ## What Each File Does
 
 - `split_data.py`: Downloads the Natural Questions dataset and creates reusable train, eval, and test splits. The resulting files are saved in `dataset/`.
-- `training.py`: Loads the saved dataset splits, fine-tunes an embedding model, evaluates it, and saves checkpoints and the final model in nq-e5-large-`instruct/`.
+- `training.py`: Loads the saved dataset splits, fine-tunes an embedding model, evaluates it, and saves checkpoints and the final model in `nq-e5-large-instruct/`.
 
 ## Dataset
 
