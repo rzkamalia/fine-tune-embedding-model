@@ -15,10 +15,10 @@ The current workflow:
 
 ```text
 .
-├── split_data.py
-├── training.py
 ├── pyproject.toml
-└── README.md
+├── README.md
+├── split_data.py
+└── training.py
 ```
 
 ## What Each File Does
