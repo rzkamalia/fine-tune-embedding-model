@@ -1,10 +1,11 @@
 from datasets import load_from_disk
-from sentence_transformers import SentenceTransformer
-from sentence_transformers import sentence_transformer
+from sentence_transformers import SentenceTransformer, sentence_transformer
 from sentence_transformers.sentence_transformer import SentenceTransformerTrainer
-from sentence_transformers.sentence_transformer.training_args import BatchSamplers, SentenceTransformerTrainingArguments
+from sentence_transformers.sentence_transformer.training_args import (
+    BatchSamplers,
+    SentenceTransformerTrainingArguments,
+)
 from transformers import EarlyStoppingCallback
-
 
 # load saved dataset splits
 train_dataset = load_from_disk("dataset/train-data")
